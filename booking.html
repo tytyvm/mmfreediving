@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now | MM Freediving</title>
+  <meta name="description" content="Book your freediving course or private session with MM Freediving. Secure online booking with instant confirmation." />
+  <link rel="canonical" href="https://mmfreediving.com/booking.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf7f2;
+      --sand:       #f2ebe0;
+      --shell:      #e8ddd0;
+      --shore:      #c9bfb0;
+      --ocean:      #3a8fa8;
+      --ocean-deep: #276e85;
+      --seafoam:    #6bb5c8;
+      --sunset:     #e87c3e;
+      --sunset-lt:  #f0a060;
+      --sunset-dk:  #c45e28;
+      --ink:        #1c2b32;
+      --driftwood:  #6e6258;
+      --muted:      #9e9488;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --success:    #2e8b57;
+      --error:      #c0392b;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 4rem;
+      background: rgba(250,247,242,0.98);
+      box-shadow: 0 1px 0 var(--shell);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 300;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      position: relative;
+      z-index: 301;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: all 0.35s ease;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 199;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--sunset); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 10rem 4rem 4rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 55% 55% at 50% 60%, rgba(107,181,200,0.15) 0%, transparent 65%),
+        linear-gradient(168deg, #faf7f2 0%, #eef5f8 50%, #faf7f2 100%);
+    }
+    .page-hero-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--ocean);
+      margin-bottom: 1.4rem;
+    }
+    .page-hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .page-hero-title em { font-style: italic; color: var(--sunset); }
+    .page-hero-sub {
+      font-size: 0.88rem;
+      color: var(--driftwood);
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--shell), transparent);
+      margin: 0 4rem;
+    }
+
+    /* ── BOOKING FLOW ── */
+    .booking-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+
+    /* Progress Steps */
+    .progress-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 4rem;
+    }
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .progress-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--shell);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      color: var(--muted);
+      background: var(--cream);
+      transition: all 0.4s ease;
+    }
+    .progress-step.active .progress-circle {
+      border-color: var(--sunset);
+      color: var(--sunset-dk);
+      background: rgba(232,124,62,0.08);
+    }
+    .progress-step.completed .progress-circle {
+      border-color: var(--ocean);
+      background: var(--ocean);
+      color: #fff;
+    }
+    .progress-label {
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+    .progress-step.active .progress-label { color: var(--sunset-dk); }
+    .progress-step.completed .progress-label { color: var(--ocean-deep); }
+    .progress-line {
+      width: 80px;
+      height: 1px;
+      background: var(--shell);
+      margin: 0 1rem;
+      margin-bottom: 1.5rem;
+      transition: background 0.4s;
+    }
+    .progress-line.filled { background: var(--ocean); }
+
+    /* Step panels */
+    .step-panel {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .step-panel.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      text-align: center;
+    }
+    .step-subtitle {
+      font-size: 0.82rem;
+      color: var(--driftwood);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    /* ── STEP 1: COURSE CARDS ── */
+    .course-select-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .course-select-card {
+      background: #fff;
+      border: 1.5px solid var(--shell);
+      padding: 2.2rem 2rem;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-select-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sunset-lt), var(--ocean));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .course-select-card:hover { border-color: var(--sunset-lt); transform: translateY(-2px); }
+    .course-select-card:hover::before { transform: scaleX(1); }
+    .course-select-card.selected {
+      border-color: var(--sunset);
+      background: rgba(232,124,62,0.03);
+    }
+    .course-select-card.selected::before { transform: scaleX(1); }
+    .course-select-card.selected::after {
+      content: '';
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--sunset);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .csc-number {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: rgba(232,124,62,0.12);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .csc-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .csc-desc {
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: var(--driftwood);
+      margin-bottom: 1.2rem;
+    }
+    .csc-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--shell);
+    }
+    .csc-detail {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.66rem;
+    }
+    .csc-detail-label {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .csc-detail-val { color: var(--ink); font-weight: 400; }
+    .csc-price {
+      margin-top: 1.2rem;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--sunset-dk);
+    }
+    .csc-price span {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-left: 0.2rem;
+    }
+
+    /* Group size selector */
+    .group-size-wrap {
+      margin-top: 2rem;
+      background: #fff;
+      border: 1px solid var(--shell);
+      padding: 1.5rem 2rem;
+      display: none;
+    }
+    .group-size-wrap.visible { display: block; }
+    .group-size-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sunset);
+      margin-bottom: 0.8rem;
+    }
+    .group-size-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .group-size-btn {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--shell);
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .group-size-btn:hover { border-color: var(--sunset-lt); }
+    .group-size-num {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--ink);
+      min-width: 30px;
+      text-align: center;
+    }
+    .group-size-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-left: auto;
+    }
+    .group-total {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--shell);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .group-total-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .group-total-val {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--sunset-dk);
+    }
+
+    /* ── STEP 2: DATE PICKER ── */
+    .calendar-wrap {
+      background: #fff;
+      border: 1px solid var(--shell);
+      padding: 2rem;
+    }
+    .cal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .cal-month {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--ink);
+    }
+    .cal-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .cal-nav-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--shell);
+      background: var(--cream);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--driftwood);
+      transition: all 0.3s;
+    }
+    .cal-nav-btn:hover { border-color: var(--sunset-lt); color: var(--ink); }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .cal-day-label {
+      text-align: center;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.5rem 0;
+    }
+    .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      color: var(--driftwood);
+      cursor: default;
+      border: 1px solid transparent;
+      transition: all 0.25s;
+      position: relative;
+    }
+    .cal-day.empty { visibility: hidden; }
+    .cal-day.past { color: var(--shell); }
+    .cal-day.available {
+      cursor: pointer;
+      color: var(--ink);
+      background: rgba(58,143,168,0.04);
+      border-color: rgba(58,143,168,0.15);
+    }
+    .cal-day.available:hover {
+      background: rgba(58,143,168,0.12);
+      border-color: var(--ocean);
+    }
+    .cal-day.selected {
+      background: var(--ocean);
+      color: #fff;
+      border-color: var(--ocean);
+    }
+    .cal-day .spots-indicator {
+      font-size: 0.48rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .cal-day.available .spots-indicator { color: var(--ocean); }
+    .cal-day.selected .spots-indicator { color: rgba(255,255,255,0.7); }
+    .cal-day.limited .spots-indicator { color: var(--sunset); }
+
+    .cal-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--shell);
+    }
+    .cal-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .cal-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+    .cal-legend-dot.available { background: rgba(58,143,168,0.15); border: 1px solid rgba(58,143,168,0.3); }
+    .cal-legend-dot.selected  { background: var(--ocean); }
+    .cal-legend-dot.limited   { background: rgba(232,124,62,0.15); border: 1px solid rgba(232,124,62,0.3); }
+
+    .selected-date-summary {
+      margin-top: 1.5rem;
+      background: rgba(58,143,168,0.06);
+      border: 1px solid rgba(58,143,168,0.2);
+      padding: 1.2rem 1.5rem;
+      display: none;
+    }
+    .selected-date-summary.visible { display: flex; align-items: center; justify-content: space-between; }
+    .sds-text { font-size: 0.82rem; color: var(--ink); }
+    .sds-text strong { font-weight: 400; }
+    .sds-change {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ocean);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      transition: color 0.3s;
+    }
+    .sds-change:hover { color: var(--sunset); }
+
+    /* ── TIME SLOT PICKER ── */
+    .time-slots-wrap {
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .time-slots-wrap.visible { display: block; }
+    .time-slots-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sunset);
+      margin-bottom: 0.8rem;
+    }
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+    .time-slot {
+      padding: 0.9rem 1rem;
+      background: #fff;
+      border: 1px solid var(--shell);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.78rem;
+      color: var(--driftwood);
+    }
+    .time-slot:hover { border-color: var(--sunset-lt); color: var(--ink); }
+    .time-slot.selected {
+      border-color: var(--ocean);
+      background: rgba(58,143,168,0.06);
+      color: var(--ocean-deep);
+      font-weight: 400;
+    }
+
+    /* ── STEP 3: YOUR INFO ── */
+    .info-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.56rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #fff;
+      border: 1px solid var(--shell);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.84rem;
+      font-weight: 300;
+      padding: 0.88rem 1.1rem;
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--sunset-lt); }
+    .form-group textarea { resize: none; height: 90px; }
+    .form-group .field-error {
+      font-size: 0.62rem;
+      color: var(--error);
+      display: none;
+    }
+    .form-group.has-error input,
+    .form-group.has-error select { border-color: var(--error); }
+    .form-group.has-error .field-error { display: block; }
+
+    /* Waiver checkbox */
+    .waiver-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      padding: 1rem 1.2rem;
+      background: rgba(58,143,168,0.04);
+      border: 1px solid rgba(58,143,168,0.12);
+    }
+    .waiver-check input[type="checkbox"] {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1.5px solid var(--shell);
+      background: #fff;
+      cursor: pointer;
+      margin-top: 2px;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .waiver-check input[type="checkbox"]:checked {
+      background: var(--ocean);
+      border-color: var(--ocean);
+    }
+    .waiver-check input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 9px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .waiver-text {
+      font-size: 0.76rem;
+      line-height: 1.7;
+      color: var(--driftwood);
+    }
+
+    /* ── STEP 4: REVIEW & PAY ── */
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--shell);
+      overflow: hidden;
+    }
+    .review-header {
+      padding: 1.8rem 2rem;
+      background: linear-gradient(135deg, rgba(58,143,168,0.06), rgba(232,124,62,0.04));
+      border-bottom: 1px solid var(--shell);
+    }
+    .review-header-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--ink);
+    }
+    .review-body { padding: 2rem; }
+    .review-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(232,221,208,0.5);
+    }
+    .review-row:last-child { border-bottom: none; }
+    .review-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .review-val {
+      font-size: 0.85rem;
+      color: var(--ink);
+      text-align: right;
+    }
+    .review-divider {
+      height: 1px;
+      background: var(--shell);
+      margin: 0.5rem 0;
+    }
+    .review-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 0 0;
+    }
+    .review-total-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .review-total-val {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--sunset-dk);
+    }
+
+    .deposit-note {
+      margin-top: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      background: rgba(232,124,62,0.05);
+      border: 1px solid rgba(232,124,62,0.15);
+      font-size: 0.76rem;
+      line-height: 1.7;
+      color: var(--driftwood);
+    }
+    .deposit-note strong {
+      color: var(--sunset-dk);
+      font-weight: 400;
+    }
+
+    .secure-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+    .lock-icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ── STEP 5: CONFIRMATION ── */
+    .confirmation-wrap {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .confirm-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--ocean), var(--seafoam));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+    }
+    .confirm-title {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .confirm-title em { font-style: italic; color: var(--sunset); }
+    .confirm-sub {
+      font-size: 0.86rem;
+      color: var(--driftwood);
+      line-height: 1.9;
+      max-width: 420px;
+      margin: 0 auto 2.5rem;
+    }
+    .confirm-details {
+      background: #fff;
+      border: 1px solid var(--shell);
+      padding: 2rem;
+      text-align: left;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .confirm-detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(232,221,208,0.5);
+      font-size: 0.8rem;
+    }
+    .confirm-detail-row:last-child { border-bottom: none; }
+    .confirm-detail-label { color: var(--muted); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .confirm-detail-val { color: var(--ink); }
+
+    /* ── BUTTONS ── */
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+    .btn-row.center { justify-content: center; }
+    .btn-back {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--driftwood);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      transition: color 0.3s;
+      padding: 0.5rem 0;
+    }
+    .btn-back:hover { color: var(--ink); }
+    .btn-next {
+      display: inline-block;
+      padding: 0.95rem 2.6rem;
+      border: 1.5px solid var(--sunset);
+      color: var(--sunset-dk);
+      background: transparent;
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-next::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--sunset);
+      transform: translateX(-101%);
+      transition: transform 0.4s ease;
+      z-index: -1;
+    }
+    .btn-next:hover { color: #fff; }
+    .btn-next:hover::before { transform: translateX(0); }
+    .btn-next:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-next:disabled:hover { color: var(--sunset-dk); }
+    .btn-next:disabled:hover::before { transform: translateX(-101%); }
+    .btn-next.pay-btn {
+      border-color: var(--ocean);
+      color: #fff;
+      background: var(--ocean);
+      padding: 1.05rem 3rem;
+      font-size: 0.72rem;
+    }
+    .btn-next.pay-btn::before { background: var(--ocean-deep); }
+    .btn-next.pay-btn:hover { background: var(--ocean-deep); }
+    .btn-next.pay-btn.pay-btn-alt {
+      background: transparent;
+      color: var(--ocean-deep);
+    }
+    .btn-next.pay-btn.pay-btn-alt::before { background: var(--ocean); }
+    .btn-next.pay-btn.pay-btn-alt:hover { background: transparent; color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    footer p { font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); }
+    .footer-social { display: flex; gap: 1.5rem; }
+    .footer-social a { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-social a:hover { color: var(--sunset-lt); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.4rem 1.8rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      .page-hero { padding: 8rem 1.8rem 3rem; }
+      .booking-section { padding: 3rem 1.8rem; }
+      .course-select-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .progress-line { width: 30px; margin: 0 0.3rem; margin-bottom: 1.5rem; }
+      .progress-label { font-size: 0.48rem; }
+      .time-slots { grid-template-columns: 1fr 1fr; }
+      .cal-legend { flex-wrap: wrap; gap: 0.8rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .btn-row { flex-direction: column-reverse; gap: 1rem; align-items: stretch; text-align: center; }
+    }
+  /* ── ANNOUNCEMENT BANNER ── */
+  .announce-banner { position:fixed; top:0; left:0; right:0; z-index:300; background:#e87c3e; color:#fff; text-align:center; padding:0.65rem 3rem; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:1rem; }
+  .announce-banner a { color:#fff; text-decoration:underline; text-underline-offset:3px; font-weight:400; white-space:nowrap; }
+  .announce-close { position:absolute; right:1rem; background:none; border:none; color:#fff; font-size:1.1rem; cursor:pointer; opacity:0.7; line-height:1; padding:0.2rem 0.4rem; }
+  .announce-close:hover { opacity:1; }
+  body.banner-visible nav { top:var(--banner-h, 38px); }
+  </style>
+</head>
+<body class="banner-visible">
+
+<!-- ── ANNOUNCEMENT BANNER ── -->
+<div class="announce-banner" id="announceBanner">
+  <span>Classes now available — <strong>July 11</strong> &amp; <strong>August 1</strong></span>
+  <a href="booking.html">Book Now →</a>
+  <button class="announce-close" onclick="document.getElementById('announceBanner').remove(); document.body.classList.remove('banner-visible');" aria-label="Close">×</button>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">MM Freediving</a>
+  <ul class="nav-links">
+    <li><a href="index.html#courses">Courses</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="booking.html" style="color: var(--sunset);">Book Now</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#courses">Courses</a>
+  <a href="index.html#about">About</a>
+  <a href="booking.html">Book Now</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<div class="page-hero">
+  <p class="page-hero-eyebrow">Secure Online Booking</p>
+  <h1 class="page-hero-title">Book your <em>dive.</em></h1>
+  <p class="page-hero-sub">Select your course, pick a weekend, and reserve your spot. Payment is handled securely through Square.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── BOOKING FLOW ── -->
+<div class="booking-section">
+
+  <!-- Progress -->
+  <div class="progress-bar">
+    <div class="progress-step active" data-step="1">
+      <div class="progress-circle">1</div>
+      <span class="progress-label">Course</span>
+    </div>
+    <div class="progress-line" data-line="1"></div>
+    <div class="progress-step" data-step="2">
+      <div class="progress-circle">2</div>
+      <span class="progress-label">Date</span>
+    </div>
+    <div class="progress-line" data-line="2"></div>
+    <div class="progress-step" data-step="3">
+      <div class="progress-circle">3</div>
+      <span class="progress-label">Details</span>
+    </div>
+    <div class="progress-line" data-line="3"></div>
+    <div class="progress-step" data-step="4">
+      <div class="progress-circle">4</div>
+      <span class="progress-label">Pay</span>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 1: SELECT COURSE ═══ -->
+  <div class="step-panel active" id="step1">
+    <h2 class="step-title">Choose your course</h2>
+    <p class="step-subtitle">Select the course that's right for you. Not sure? Check out our <a href="index.html#courses" style="color:var(--ocean);text-decoration:none;">course details</a>.</p>
+
+    <div class="course-select-grid">
+      <div class="course-select-card" data-course="level1" onclick="selectCourse(this)">
+        <div class="csc-number">01</div>
+        <div class="csc-title">Level 1 Freediving</div>
+        <p class="csc-desc">Complete 2-day introduction. Pool and open water sessions with certification included.</p>
+        <div class="csc-details">
+          <div class="csc-detail"><span class="csc-detail-label">Duration</span><span class="csc-detail-val">2 Days</span></div>
+          <div class="csc-detail"><span class="csc-detail-label">Group Size</span><span class="csc-detail-val">Max 6</span></div>
+          <div class="csc-detail"><span class="csc-detail-label">Level</span><span class="csc-detail-val">Beginner</span></div>
+        </div>
+        <div class="csc-price">$500 <span>/ person</span></div>
+      </div>
+      <a href="private.html" class="course-select-card" data-course="private" style="text-decoration:none; color:inherit;">
+        <div class="csc-number">02</div>
+        <div class="csc-title">Private Session</div>
+        <p class="csc-desc">One-on-one instruction tailored to your goals. Choose half or full day.</p>
+        <div class="csc-details">
+          <div class="csc-detail"><span class="csc-detail-label">Duration</span><span class="csc-detail-val">Half or Full Day</span></div>
+          <div class="csc-detail"><span class="csc-detail-label">Format</span><span class="csc-detail-val">1-on-1</span></div>
+          <div class="csc-detail"><span class="csc-detail-label">Level</span><span class="csc-detail-val">Any</span></div>
+        </div>
+        <div class="csc-price" style="color:var(--ocean-deep);">Contact for Pricing</div>
+        <span style="display:inline-block; margin-top:0.8rem; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ocean);">Learn More →</span>
+      </a>
+    </div>
+
+    <!-- Group size (for Level 1 only) -->
+    <div class="group-size-wrap" id="groupSizeWrap">
+      <div class="group-size-label">How many students?</div>
+      <div class="group-size-row">
+        <button class="group-size-btn" onclick="changeGroupSize(-1)">-</button>
+        <span class="group-size-num" id="groupNum">1</span>
+        <button class="group-size-btn" onclick="changeGroupSize(1)">+</button>
+        <span class="group-size-note">Max 6 per session</span>
+      </div>
+      <div class="group-total">
+        <span class="group-total-label">Total</span>
+        <span class="group-total-val" id="groupTotal">$500</span>
+      </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-end;">
+      <button class="btn-next" id="btn1" disabled onclick="goToStep(2)">Select a Date →</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 2: SELECT DATE ═══ -->
+  <div class="step-panel" id="step2">
+    <h2 class="step-title">Pick your weekend</h2>
+    <p class="step-subtitle">Each course is a 2-day weekend package (Saturday + Sunday). Select a weekend below.</p>
+
+    <div class="calendar-wrap">
+      <div class="cal-header">
+        <button class="cal-nav-btn" onclick="changeMonth(-1)">&#8592;</button>
+        <span class="cal-month" id="calMonth"></span>
+        <button class="cal-nav-btn" onclick="changeMonth(1)">&#8594;</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item"><div class="cal-legend-dot available"></div> Available</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot limited"></div> Few spots left</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot selected"></div> Selected</div>
+      </div>
+    </div>
+
+    <div class="selected-date-summary" id="dateSummary">
+      <span class="sds-text" id="dateSummaryText"></span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goToStep(1)">← Back</button>
+      <button class="btn-next" id="btn2" disabled onclick="goToStep(3)">Your Details →</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 3: YOUR INFO ═══ -->
+  <div class="step-panel" id="step3">
+    <h2 class="step-title">Your details</h2>
+    <p class="step-subtitle">We'll use this to confirm your booking and send course information.</p>
+
+    <div class="info-form" id="infoForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" id="firstName" placeholder="First name" required />
+          <span class="field-error">Please enter your first name</span>
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" id="lastName" placeholder="Last name" required />
+          <span class="field-error">Please enter your last name</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="email" placeholder="your@email.com" required />
+        <span class="field-error">Please enter a valid email address</span>
+      </div>
+      <div class="form-group">
+        <label>Phone *</label>
+        <input type="tel" id="phone" placeholder="(555) 123-4567" required />
+        <span class="field-error">Please enter your phone number</span>
+      </div>
+      <div class="form-group">
+        <label>Experience Level</label>
+        <select id="experience">
+          <option value="">Select your background</option>
+          <option>Complete beginner</option>
+          <option>Some pool swimming</option>
+          <option>Scuba diver</option>
+          <option>Active spearfisher</option>
+          <option>Some freediving experience</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Notes or Questions</label>
+        <textarea id="notes" placeholder="Medical conditions, special requests, questions..."></textarea>
+      </div>
+      <div class="waiver-check">
+        <input type="checkbox" id="waiverCheck" />
+        <span class="waiver-text">I understand that freediving involves inherent risks. I confirm that I am in good physical health and will complete the full liability waiver before the course begins.</span>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goToStep(2)">← Back</button>
+      <button class="btn-next" id="btn3" onclick="goToStep(4)">Review Booking →</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 4: REVIEW & PAY ═══ -->
+  <div class="step-panel" id="step4">
+    <h2 class="step-title">Review & pay</h2>
+    <p class="step-subtitle">Double-check everything, then complete your booking.</p>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-header-title" id="reviewCourse">Level 1 Freediving</div>
+      </div>
+      <div class="review-body">
+        <div class="review-row">
+          <span class="review-label">Date</span>
+          <span class="review-val" id="reviewDate">-</span>
+        </div>
+        <div class="review-row">
+          <span class="review-label">Students</span>
+          <span class="review-val" id="reviewStudents">1</span>
+        </div>
+        <div class="review-row">
+          <span class="review-label">Name</span>
+          <span class="review-val" id="reviewName">-</span>
+        </div>
+        <div class="review-row">
+          <span class="review-label">Email</span>
+          <span class="review-val" id="reviewEmail">-</span>
+        </div>
+        <div class="review-row">
+          <span class="review-label">Phone</span>
+          <span class="review-val" id="reviewPhone">-</span>
+        </div>
+        <div class="review-divider"></div>
+        <div class="review-total">
+          <span class="review-total-label">Course Total</span>
+          <span class="review-total-val" id="reviewTotal">$500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row" style="flex-direction:column; gap: 0.8rem; align-items:stretch;">
+      <button class="btn-next pay-btn" onclick="handlePayment('deposit')" style="text-align:center;">
+        Reserve With Deposit — <span id="payDepositAmount">$200</span>
+      </button>
+      <button class="btn-next pay-btn pay-btn-alt" onclick="handlePayment('full')" style="text-align:center;">
+        Pay In Full — <span id="payFullAmount">$500</span>
+      </button>
+      <div class="deposit-note">
+        <strong>Deposit option:</strong> Reserve your spot now with a <strong id="depositNoteAmount">$200</strong> deposit. The remaining balance of <strong id="balanceNoteAmount">$300</strong> will be sent as a Square invoice and is due on the first day of class.
+      </div>
+      <div class="secure-note">
+        <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Secure payment powered by Square · 256-bit encryption
+      </div>
+    </div>
+
+    <div class="btn-row" style="justify-content:flex-start; margin-top: 1rem;">
+      <button class="btn-back" onclick="goToStep(3)">← Back</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 5: CONFIRMATION ═══ -->
+  <div class="step-panel" id="step5">
+    <div class="confirmation-wrap">
+      <div class="confirm-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="confirm-title">You're <em>booked.</em></h2>
+      <p class="confirm-sub">Confirmation details have been sent to your email. We'll follow up with a welcome packet, directions, and what to bring within 24 hours.</p>
+
+      <div class="confirm-details">
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-label">Booking ID</span>
+          <span class="confirm-detail-val" id="confirmId">MM-2026-0001</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-label">Course</span>
+          <span class="confirm-detail-val" id="confirmCourse">-</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-label">Date</span>
+          <span class="confirm-detail-val" id="confirmDate">-</span>
+        </div>
+        <div class="confirm-detail-row">
+          <span class="confirm-detail-label">Amount Paid</span>
+          <span class="confirm-detail-val" id="confirmAmount">-</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-logo">MM Freediving</span>
+  <p>&copy; 2025 MM Freediving &middot; South Florida</p>
+  <div class="footer-social">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">SMS Terms</a>
+  </div>
+</footer>
+
+<script>
+  // ════════════════════════════════════════════════
+  //  MM FREEDIVING — BOOKING SYSTEM
+  // ════════════════════════════════════════════════
+  //
+  //  SQUARE SETUP:
+  //  Payment Link for Level 1 Freediving ($500/person) is configured below.
+  //  The booking system passes ?quantity=N to Square so group size is handled.
+  // ════════════════════════════════════════════════
+
+  const PAYMENT_LINKS = {
+    'level1': {
+      full:    'https://square.link/u/6d5qcMW9',
+      deposit: 'https://square.link/u/YOUR_DEPOSIT_LINK'   // ← paste your $200 Square deposit link here
+    }
+  };
+
+  // ── STATE ──
+  let booking = {
+    course: null,
+    courseName: '',
+    price: 0,
+    groupSize: 1,
+    date: null,
+    selectedSession: null,
+    dateFormatted: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    experience: '',
+    notes: '',
+    total: 0
+  };
+
+  const COURSES = {
+    'level1': { name: 'Level 1 Freediving', price: 500, deposit: 200, perPerson: true, maxGroup: 6 }
+  };
+
+  let currentStep = 1;
+  let calendarDate = new Date(2026, 6, 1); // Start on July 2026
+
+  // ── COURSE SELECTION ──
+  function selectCourse(el) {
+    document.querySelectorAll('.course-select-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+
+    const courseId = el.dataset.course;
+    const course = COURSES[courseId];
+    booking.course = courseId;
+    booking.courseName = course.name;
+    booking.price = course.price;
+    booking.groupSize = 1;
+
+    // Show/hide group size
+    const groupWrap = document.getElementById('groupSizeWrap');
+    if (course.perPerson) {
+      groupWrap.classList.add('visible');
+      document.getElementById('groupNum').textContent = '1';
+      updateTotal();
+    } else {
+      groupWrap.classList.remove('visible');
+      booking.total = course.price;
+    }
+
+    document.getElementById('btn1').disabled = false;
+  }
+
+  function changeGroupSize(delta) {
+    const course = COURSES[booking.course];
+    booking.groupSize = Math.max(1, Math.min(course.maxGroup, booking.groupSize + delta));
+    document.getElementById('groupNum').textContent = booking.groupSize;
+    updateTotal();
+  }
+
+  function updateTotal() {
+    booking.total = booking.price * booking.groupSize;
+    document.getElementById('groupTotal').textContent = '$' + booking.total;
+  }
+
+  // ── CALENDAR ──
+  // Hardcoded available sessions — { year, month (0-indexed), day, label }
+  const AVAILABLE_SESSIONS = [
+    { year: 2026, month: 6, day: 11, label: 'Jul 11 – Jul 12' },  // July 11 (Sat) + July 12 (Sun)
+    { year: 2026, month: 7, day: 1,  label: 'Aug 1 – Aug 2'  }    // August 1 (Sat) + August 2 (Sun)
+  ];
+
+  function getAvailableDates(year, month) {
+    // Return sessions that start in this year/month
+    return AVAILABLE_SESSIONS.filter(s => s.year === year && s.month === month);
+  }
+
+  function renderCalendar() {
+    const year = calendarDate.getFullYear();
+    const month = calendarDate.getMonth();
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    document.getElementById('calMonth').textContent = monthNames[month] + ' ' + year;
+
+    const grid = document.getElementById('calGrid');
+    grid.innerHTML = '';
+
+    // Day labels
+    ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d => {
+      const label = document.createElement('div');
+      label.className = 'cal-day-label';
+      label.textContent = d;
+      grid.appendChild(label);
+    });
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const sessions = getAvailableDates(year, month);
+
+    // Build maps: day1 → session, day2 → session
+    const day1Map = {};  // first day of session (clickable)
+    const day2Map = {};  // second day of session (highlight as Day 2)
+    sessions.forEach(s => {
+      day1Map[s.day] = s;
+      day2Map[s.day + 1] = s;
+    });
+
+    const now = new Date();
+    now.setHours(0,0,0,0);
+
+    // Empty cells before first day
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'cal-day empty';
+      grid.appendChild(empty);
+    }
+
+    // Day cells
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cell = document.createElement('div');
+      cell.className = 'cal-day';
+      const thisDate = new Date(year, month, d);
+      const isDay1 = !!day1Map[d];
+      const isDay2 = !!day2Map[d];
+
+      if (isDay1) {
+        cell.classList.add('available');
+        cell.onclick = () => selectDate(day1Map[d]);
+      } else if (isDay2) {
+        cell.classList.add('available');
+        cell.onclick = () => selectDate(day2Map[d]);
+      } else if (thisDate < now) {
+        cell.classList.add('past');
+      }
+
+      // Highlight selected session
+      if (booking.selectedSession) {
+        const s = booking.selectedSession;
+        if (s.year === year && s.month === month && (d === s.day || d === s.day + 1)) {
+          cell.classList.add('selected');
+        }
+      }
+
+      const num = document.createElement('span');
+      num.textContent = d;
+      cell.appendChild(num);
+
+      if (isDay1) {
+        const ind = document.createElement('span');
+        ind.className = 'spots-indicator';
+        ind.textContent = 'Day 1';
+        cell.appendChild(ind);
+      }
+      if (isDay2) {
+        const ind = document.createElement('span');
+        ind.className = 'spots-indicator';
+        ind.textContent = 'Day 2';
+        cell.appendChild(ind);
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function changeMonth(delta) {
+    calendarDate.setMonth(calendarDate.getMonth() + delta);
+    // Don't go before current month
+    const now = new Date();
+    if (calendarDate < new Date(now.getFullYear(), now.getMonth(), 1)) {
+      calendarDate = new Date(now.getFullYear(), now.getMonth(), 1);
+    }
+    renderCalendar();
+  }
+
+  function selectDate(session) {
+    booking.selectedSession = session;
+    booking.date = new Date(session.year, session.month, session.day);
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const day1 = new Date(session.year, session.month, session.day);
+    const day2 = new Date(session.year, session.month, session.day + 1);
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    booking.dateFormatted =
+      dayNames[day1.getDay()] + ' ' + monthNames[day1.getMonth()] + ' ' + day1.getDate() +
+      ' – ' +
+      dayNames[day2.getDay()] + ' ' + monthNames[day2.getMonth()] + ' ' + day2.getDate() +
+      ', ' + day1.getFullYear();
+
+    renderCalendar();
+
+    // Show summary
+    const summary = document.getElementById('dateSummary');
+    summary.classList.add('visible');
+    document.getElementById('dateSummaryText').innerHTML = '<strong>' + booking.dateFormatted + '</strong> · 2-day course';
+
+    // Enable next button
+    document.getElementById('btn2').disabled = false;
+  }
+
+  // ── FORM VALIDATION ──
+  function validateForm() {
+    let valid = true;
+    const fields = [
+      { id: 'firstName', test: v => v.trim().length > 0 },
+      { id: 'lastName',  test: v => v.trim().length > 0 },
+      { id: 'email',     test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'phone',     test: v => v.trim().length >= 7 }
+    ];
+
+    fields.forEach(f => {
+      const el = document.getElementById(f.id);
+      const group = el.closest('.form-group');
+      if (!f.test(el.value)) {
+        group.classList.add('has-error');
+        valid = false;
+      } else {
+        group.classList.remove('has-error');
+      }
+    });
+
+    if (!document.getElementById('waiverCheck').checked) {
+      valid = false;
+      alert('Please acknowledge the waiver to continue.');
+    }
+
+    return valid;
+  }
+
+  // ── STEP NAVIGATION ──
+  function goToStep(step) {
+    // Validate before proceeding
+    if (step === 3 && currentStep === 2) {
+      if (!booking.date) return;
+    }
+    if (step === 4 && currentStep === 3) {
+      if (!validateForm()) return;
+      // Save form data
+      booking.firstName = document.getElementById('firstName').value.trim();
+      booking.lastName = document.getElementById('lastName').value.trim();
+      booking.email = document.getElementById('email').value.trim();
+      booking.phone = document.getElementById('phone').value.trim();
+      booking.experience = document.getElementById('experience').value;
+      booking.notes = document.getElementById('notes').value.trim();
+
+      if (!COURSES[booking.course].perPerson) {
+        booking.total = COURSES[booking.course].price;
+      }
+
+      // Populate review
+      populateReview();
+    }
+
+    currentStep = step;
+
+    // Update panels
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('step' + step).classList.add('active');
+
+    // Update progress
+    document.querySelectorAll('.progress-step').forEach(s => {
+      const sNum = parseInt(s.dataset.step);
+      s.classList.remove('active', 'completed');
+      if (sNum === step) s.classList.add('active');
+      else if (sNum < step) s.classList.add('completed');
+    });
+    document.querySelectorAll('.progress-line').forEach(l => {
+      const lNum = parseInt(l.dataset.line);
+      l.classList.toggle('filled', lNum < step);
+    });
+
+    // Scroll to top of booking
+    window.scrollTo({ top: document.querySelector('.booking-section').offsetTop - 100, behavior: 'smooth' });
+
+    // Init calendar on step 2
+    if (step === 2) renderCalendar();
+  }
+
+  function populateReview() {
+    document.getElementById('reviewCourse').textContent = booking.courseName;
+    document.getElementById('reviewDate').textContent = booking.dateFormatted;
+    document.getElementById('reviewStudents').textContent = booking.groupSize;
+    document.getElementById('reviewName').textContent = booking.firstName + ' ' + booking.lastName;
+    document.getElementById('reviewEmail').textContent = booking.email;
+    document.getElementById('reviewPhone').textContent = booking.phone;
+    document.getElementById('reviewTotal').textContent = '$' + booking.total;
+    document.getElementById('payFullAmount').textContent = '$' + booking.total;
+
+    // Deposit option: $200/student now, remaining balance invoiced
+    const c = COURSES[booking.course];
+    const depositTotal = (c.deposit || 0) * booking.groupSize;
+    const balanceTotal = booking.total - depositTotal;
+    const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setText('payDepositAmount', '$' + depositTotal);
+    setText('depositNoteAmount', '$' + depositTotal);
+    setText('balanceNoteAmount', '$' + balanceTotal);
+  }
+
+  // ── PAYMENT ──
+  function handlePayment(type) {
+    const links = PAYMENT_LINKS[booking.course];
+
+    if (!links) {
+      alert('Payment links not configured yet. See the setup instructions in booking.html.');
+      return;
+    }
+
+    const c = booking.course ? COURSES[booking.course] : null;
+    const depositTotal = ((c && c.deposit) || 0) * booking.groupSize;
+    const amountDue = (type === 'deposit') ? depositTotal : booking.total;
+    const url = (type === 'deposit') ? links.deposit : links.full;
+
+    // Check if it's missing or a placeholder link
+    if (!url || url.includes('YOUR_')) {
+      // Demo mode — show confirmation
+      showConfirmation(type);
+      return;
+    }
+
+    // If booking multiple spots, remind user to set quantity on Square
+    if (booking.groupSize > 1) {
+      const confirmed = confirm(
+        'You are booking for ' + booking.groupSize + ' students ($' + amountDue + ' due now).\n\n' +
+        'On the next page, please set the quantity to ' + booking.groupSize + ' before completing payment.'
+      );
+      if (!confirmed) return;
+    }
+
+    window.location.href = url;
+  }
+
+  function generateBookingId() {
+    const now = new Date();
+    const id = 'MM-' + now.getFullYear() + '-' + String(Math.floor(Math.random() * 9999)).padStart(4, '0');
+    return id;
+  }
+
+  function showConfirmation(type) {
+    const id = generateBookingId();
+    const c = booking.course ? COURSES[booking.course] : null;
+    const depositTotal = ((c && c.deposit) || 0) * booking.groupSize;
+    const amount = (type === 'deposit') ? '$' + depositTotal + ' deposit' : '$' + booking.total;
+
+    document.getElementById('confirmId').textContent = id;
+    document.getElementById('confirmCourse').textContent = booking.courseName;
+    document.getElementById('confirmDate').textContent = booking.dateFormatted;
+    document.getElementById('confirmAmount').textContent = amount;
+
+    // Hide progress bar
+    document.querySelector('.progress-bar').style.display = 'none';
+
+    goToStep(5);
+  }
+
+  // ── HAMBURGER ──
+  // ── KEEP NAV CLEAR OF THE ANNOUNCEMENT BANNER (handles banner wrapping on mobile) ──
+  (function () {
+    const banner = document.getElementById('announceBanner');
+    function syncBannerHeight() {
+      const h = (banner && document.body.classList.contains('banner-visible')) ? banner.offsetHeight : 0;
+      document.documentElement.style.setProperty('--banner-h', h + 'px');
+    }
+    syncBannerHeight();
+    window.addEventListener('load', syncBannerHeight);
+    window.addEventListener('resize', syncBannerHeight, { passive: true });
+    window.addEventListener('orientationchange', syncBannerHeight);
+  })();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // ── URL PARAMS (for return from Square) ──
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    document.querySelector('.progress-bar').style.display = 'none';
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('step5').classList.add('active');
+    document.getElementById('confirmId').textContent = urlParams.get('booking_id') || 'MM-' + new Date().getFullYear() + '-XXXX';
+    document.getElementById('confirmCourse').textContent = 'Your course';
+    document.getElementById('confirmDate').textContent = 'See confirmation email';
+    document.getElementById('confirmAmount').textContent = 'Paid';
+  }
+</script>
+
+</body>
+</html>

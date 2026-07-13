@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── PRIMARY SEO ── -->
+  <title>Level 1 Freediving Course | MM Freediving | South Florida</title>
+  <meta name="description" content="Learn to freedive in South Florida with MM Freediving's Level 1 course. 2 days, pool and open water, certification included. $500 per person. Serving Boca Raton, Jupiter, Palm Beach, Fort Lauderdale." />
+  <meta name="keywords" content="Level 1 freediving course South Florida, learn to freedive Boca Raton, freediving Jupiter FL, freediving certification Florida, beginner freediving class Palm Beach, freediving course near me" />
+  <meta name="author" content="MM Freediving" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mmfreediving.com/level-1.html" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Level 1 Freediving Course | MM Freediving South Florida" />
+  <meta property="og:description" content="2-day beginner freediving course in South Florida. Pool + open water. Certification included. $500 per person." />
+  <meta property="og:url" content="https://mmfreediving.com/level-1.html" />
+  <meta property="og:site_name" content="MM Freediving" />
+  <meta property="og:image" content="https://mmfreediving.com/images/og-image.jpg" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Level 1 Freediving Course | MM Freediving South Florida" />
+  <meta name="twitter:description" content="2-day beginner freediving course. Pool + open water. Certification included. $500 per person." />
+
+  <!-- ── COURSE SCHEMA ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Level 1 Freediving Course",
+    "description": "A complete 2-day introduction to freediving covering breath-hold physiology, breathwork, equalization, safety protocols, and open water dives to depth. No experience necessary. Certification included.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "MM Freediving",
+      "url": "https://mmfreediving.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boca Raton",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "500",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-05-01"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "location": {
+        "@type": "Place",
+        "name": "South Florida",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Boca Raton",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        }
+      },
+      "instructor": {
+        "@type": "Person",
+        "name": "MM Freediving Instructor",
+        "jobTitle": "Certified Freediving Instructor"
+      }
+    },
+    "timeRequired": "P2D",
+    "educationalLevel": "Beginner",
+    "teaches": ["Freediving", "Breath-hold diving", "Equalization", "Underwater safety", "Buddy system"]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2; --sand: #f2ebe0; --shell: #e8ddd0; --shore: #c9bfb0;
+      --ocean: #3a8fa8; --ocean-deep: #276e85; --seafoam: #6bb5c8;
+      --sunset: #e87c3e; --sunset-lt: #f0a060; --sunset-dk: #c45e28;
+      --ink: #1c2b32; --driftwood: #6e6258; --muted: #9e9488;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.8rem 4rem;
+    }
+    nav::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(250,247,242,0.97) 60%, transparent);
+      pointer-events: none; transition: background 0.3s;
+    }
+    nav.scrolled::before { background: rgba(250,247,242,0.98); box-shadow: 0 1px 0 var(--shell); }
+    .nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 300; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: relative; z-index: 301; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: all 0.35s ease; transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 199; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: var(--serif); font-size: 2.8rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color 0.3s; }
+    .mobile-menu a:hover { color: var(--sunset); }
+    .mobile-menu-sub { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-top: 1rem; }
+
+    /* PAGE HERO */
+    .page-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 4rem 5rem;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 75% 50%, rgba(107,181,200,0.3) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 40% at 10% 80%, rgba(232,124,62,0.1) 0%, transparent 60%),
+        linear-gradient(168deg, #faf7f2 0%, #edf5f8 35%, #d2ebf4 70%, #c8e6f1 100%);
+    }
+    .page-hero-glow { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(to top, rgba(232,124,62,0.07), transparent); pointer-events: none; }
+    .breadcrumb { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; position: relative; animation: fadeUp 0.8s ease 0.1s both; }
+    .breadcrumb a { color: var(--ocean); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .page-title { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; line-height: 0.92; color: var(--ink); position: relative; animation: fadeUp 0.8s ease 0.3s both; }
+    .page-title em { font-style: italic; color: var(--sunset); }
+    .page-tagline { margin-top: 1.5rem; font-size: 0.9rem; color: var(--driftwood); max-width: 420px; line-height: 1.9; position: relative; animation: fadeUp 0.8s ease 0.5s both; }
+    .page-hero-meta { margin-top: 2rem; display: flex; gap: 2.5rem; position: relative; animation: fadeUp 0.8s ease 0.7s both; }
+    .page-hero-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+    .page-hero-stat-val { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--sunset-dk); }
+    .page-hero-stat-label { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-loaded .reveal { opacity: 0; transform: translateY(32px); }
+    .js-loaded .reveal.reveal-left { transform: translateX(-32px); }
+    .js-loaded .reveal.reveal-right { transform: translateX(32px); }
+    .reveal.visible { opacity: 1 !important; transform: translate(0,0) !important; }
+    .reveal-d1 { transition-delay: 0.1s; } .reveal-d2 { transition-delay: 0.2s; } .reveal-d3 { transition-delay: 0.3s; }
+
+    /* BUTTONS */
+    .btn-primary { display: inline-block; padding: 0.95rem 2.4rem; border: 1.5px solid var(--sunset); color: var(--sunset-dk); background: transparent; text-decoration: none; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; transition: all 0.4s; position: relative; overflow: hidden; }
+    .btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--sunset); transform: translateX(-101%); transition: transform 0.4s ease; z-index: -1; }
+    .btn-primary:hover { color: #fff; }
+    .btn-primary:hover::before { transform: translateX(0); }
+    .btn-ghost { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--driftwood); text-decoration: none; transition: color 0.3s; }
+    .btn-ghost:hover { color: var(--ink); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--shell), transparent); margin: 0 4rem; }
+
+    /* SECTION */
+    .section-wrap { max-width: 1360px; margin: 0 auto; padding: 6rem 4rem; }
+    .section-label { font-size: 0.58rem; letter-spacing: 0.48em; text-transform: uppercase; color: var(--sunset); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .section-label::after { content: ''; display: block; width: 36px; height: 1px; background: var(--sunset); opacity: 0.5; }
+
+    /* OVERVIEW */
+    #overview { background: var(--cream); }
+    .overview-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
+    .overview-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.3; color: var(--ink); margin-bottom: 2rem; }
+    .overview-heading em { font-style: italic; color: var(--sunset); }
+    .overview-text { font-size: 0.86rem; line-height: 2; color: var(--driftwood); margin-bottom: 1.2rem; }
+    .overview-sidebar { display: flex; flex-direction: column; gap: 0; }
+    .sidebar-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--shell); font-size: 0.72rem; }
+    .sidebar-row:first-child { padding-top: 0; }
+    .sidebar-label { letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .sidebar-val { color: var(--ink); font-weight: 400; text-align: right; }
+    .sidebar-price { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; color: var(--sunset-dk); margin-top: 1.5rem; }
+    .sidebar-price span { font-family: var(--sans); font-size: 0.62rem; color: var(--muted); margin-left: 0.3rem; vertical-align: middle; letter-spacing: 0.1em; }
+
+    /* CURRICULUM */
+    #curriculum { background: var(--sand); }
+    .curriculum-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; margin-top: 1rem; }
+    .curriculum-block { background: var(--cream); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
+    .curriculum-block:hover { background: #fff; }
+    .curriculum-block::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: linear-gradient(to bottom, var(--sunset-lt), var(--ocean)); transition: height 0.4s ease; }
+    .curriculum-block:hover::before { height: 100%; }
+    .curriculum-day { font-size: 0.56rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--sunset); margin-bottom: 0.8rem; }
+    .curriculum-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--ink); margin-bottom: 1rem; }
+    .curriculum-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .curriculum-list li { font-size: 0.82rem; color: var(--driftwood); line-height: 1.6; padding-left: 1rem; position: relative; }
+    .curriculum-list li::before { content: '—'; position: absolute; left: 0; color: var(--sunset-lt); }
+
+    /* WHAT TO BRING */
+    #bring { background: var(--cream); }
+    .bring-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 1rem; }
+    .bring-card { background: var(--sand); padding: 2rem 1.8rem; transition: background 0.3s; }
+    .bring-card:hover { background: var(--shell); }
+    .bring-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .bring-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; color: var(--ink); margin-bottom: 0.4rem; }
+    .bring-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
+
+    /* FAQ */
+    #faq { background: var(--sand); }
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
+    .faq-item { border-bottom: 1px solid var(--shell); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1.4rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 0.88rem; font-weight: 300; color: var(--ink); }
+    .faq-q:hover { color: var(--sunset-dk); }
+    .faq-arrow { font-size: 0.8rem; color: var(--sunset); transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { font-size: 0.82rem; color: var(--driftwood); line-height: 1.9; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.4rem; }
+
+    /* BOOK CTA */
+    #book-cta { background: linear-gradient(155deg, var(--sand) 0%, #ede5d8 100%); }
+    .book-cta-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+    .book-cta-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
+    .book-cta-title em { font-style: italic; color: var(--sunset); }
+    .book-cta-sub { font-size: 0.86rem; color: var(--driftwood); line-height: 1.9; margin-bottom: 2.5rem; }
+    .book-embed { background: rgba(255,255,255,0.5); border: 1px solid var(--shell); padding: 3rem 2rem; margin-top: 1rem; }
+    .book-embed p { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .book-embed .note { font-size: 0.62rem; color: var(--shore); margin-top: 0.5rem; font-style: italic; letter-spacing: 0; text-transform: none; }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    footer p { font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); }
+    .footer-social { display: flex; gap: 1.5rem; }
+    .footer-social a { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-social a:hover { color: var(--sunset-lt); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.4rem 1.8rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      .page-hero { padding: 0 1.8rem 4rem; min-height: 50vh; }
+      .section-wrap { padding: 4rem 1.8rem; }
+      .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .curriculum-grid { grid-template-columns: 1fr; }
+      .bring-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+    @media (max-width: 580px) {
+      .bring-grid { grid-template-columns: 1fr; }
+      .page-hero-meta { flex-wrap: wrap; gap: 1.5rem; }
+    }
+  /* ── ANNOUNCEMENT BANNER ── */
+  .announce-banner { position:fixed; top:0; left:0; right:0; z-index:300; background:#e87c3e; color:#fff; text-align:center; padding:0.65rem 3rem; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:1rem; }
+  .announce-banner a { color:#fff; text-decoration:underline; text-underline-offset:3px; font-weight:400; white-space:nowrap; }
+  .announce-banner a:hover { opacity:0.85; }
+  .announce-close { position:absolute; right:1rem; background:none; border:none; color:#fff; font-size:1.1rem; cursor:pointer; opacity:0.7; line-height:1; padding:0.2rem 0.4rem; }
+  .announce-close:hover { opacity:1; }
+  body.banner-visible nav { top:var(--banner-h, 38px); }
+  body.banner-visible .mobile-menu { padding-top:var(--banner-h, 38px); }
+  </style>
+</head>
+<body class="banner-visible">
+
+<!-- ── ANNOUNCEMENT BANNER ── -->
+<div class="announce-banner" id="announceBanner">
+  <span>Classes now available — <strong>July 11</strong> &amp; <strong>August 1</strong></span>
+  <a href="booking.html">Book Now →</a>
+  <button class="announce-close" onclick="document.getElementById('announceBanner').remove(); document.body.classList.remove('banner-visible');" aria-label="Close">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">MM Freediving</a>
+  <ul class="nav-links">
+    <li><a href="index.html#courses">Courses</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="booking.html">Book</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#courses" class="mobile-link">Courses</a>
+  <a href="index.html#about"   class="mobile-link">About</a>
+  <a href="booking.html"    class="mobile-link">Book</a>
+  <a href="index.html#contact" class="mobile-link">Contact</a>
+  <p class="mobile-menu-sub">South Florida · Freediving Instruction</p>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+  <p class="breadcrumb"><a href="index.html">MM Freediving</a> &nbsp;/&nbsp; Courses &nbsp;/&nbsp; Level 1</p>
+  <h1 class="page-title">Level 1<br><em>Freediving</em></h1>
+  <p class="page-tagline">The fundamentals of freediving.</p>
+  <div class="page-hero-meta">
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">2 Days</span>
+      <span class="page-hero-stat-label">Duration</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">$500</span>
+      <span class="page-hero-stat-label">Per Person</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">Max 6</span>
+      <span class="page-hero-stat-label">Students</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">All Levels</span>
+      <span class="page-hero-stat-label">Welcome</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="section-wrap">
+    <div class="overview-grid">
+      <div class="reveal">
+        <p class="section-label">Overview</p>
+        <h2 class="overview-heading">Everything you need to<br><em>start freediving safely.</em></h2>
+        <p class="overview-text">The Level 1 course is designed for anyone curious about freediving with no prior experience required. If you can swim comfortably, you can take this course. That being said, it is not exclusively for beginners. We have taught many experienced spearfisherman and recreational divers who were able to improve their depth and dive times.</p>
+        <p class="overview-text">Over two days we cover everything from the physiology of breath-hold diving to your first open water dives. You'll learn why the body responds the way it does underwater, how to equalize at depth, and most importantly how to be safe, both as a diver and as a buddy.</p>
+        <p class="overview-text">By the end you'll have logged real open water dives, earned your Level 1 certification, and have a framework for continuing to develop as a freediver.</p>
+        <div style="margin-top:2rem; display:flex; gap:1.2rem;">
+          <a href="booking.html" class="btn-primary">Book This Course</a>
+          <a href="index.html#contact" class="btn-ghost" style="display:flex;align-items:center;">Ask a Question →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-right reveal-d1">
+        <div class="overview-sidebar">
+          <div class="sidebar-row"><span class="sidebar-label">Duration</span><span class="sidebar-val">2 Days</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Day 1</span><span class="sidebar-val">Theory + Pool</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Day 2</span><span class="sidebar-val">Open Water</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Group Size</span><span class="sidebar-val">Max 6 Students</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Location</span><span class="sidebar-val">South Florida</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Prerequisites</span><span class="sidebar-val">Comfortable Swimmer</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Certification</span><span class="sidebar-val">Level 1 Freediving</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Equipment</span><span class="sidebar-val">Provided</span></div>
+        </div>
+        <div class="sidebar-price">$500 <span>/ person</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="section-wrap">
+    <p class="section-label reveal">Curriculum</p>
+    <div class="curriculum-grid">
+      <div class="curriculum-block reveal reveal-d1">
+        <p class="curriculum-day">Day 1 — Morning</p>
+        <h3 class="curriculum-title">Theory & Physiology</h3>
+        <ul class="curriculum-list">
+          <li>How the mammalian dive reflex works</li>
+          <li>Breath-hold physiology and lung capacity</li>
+          <li>Understanding hypoxia and shallow water blackout</li>
+          <li>The buddy system — roles, responsibilities, rescue</li>
+          <li>Equipment overview and setup</li>
+        </ul>
+      </div>
+      <div class="curriculum-block reveal reveal-d2">
+        <p class="curriculum-day">Day 1 — Afternoon</p>
+        <h3 class="curriculum-title">Pool Session</h3>
+        <ul class="curriculum-list">
+          <li>Breathwork and relaxation techniques</li>
+          <li>Static apnea — timed breath-holds in controlled environment</li>
+          <li>Equalization practice</li>
+          <li>Rescue drills and buddy monitoring</li>
+        </ul>
+      </div>
+      <div class="curriculum-block reveal reveal-d3">
+        <p class="curriculum-day">Day 2 — Morning</p>
+        <h3 class="curriculum-title">Open Water Dives</h3>
+        <ul class="curriculum-list">
+          <li>Pre-dive routines and warm-up protocol</li>
+          <li>First open water dives to depth</li>
+          <li>Live buddy system practice in ocean conditions</li>
+          <li>Depth progression at your own pace</li>
+          <li>Equalization practice and review</li>
+        </ul>
+      </div>
+      <div class="curriculum-block reveal reveal-d1">
+        <p class="curriculum-day">Day 2 — Afternoon</p>
+        <h3 class="curriculum-title">Final Test and Wrap Up</h3>
+        <ul class="curriculum-list">
+          <li>Review of the class</li>
+          <li>Time for questions</li>
+          <li>A brief paper test</li>
+          <li>Next steps — Level 2 and beyond</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT TO BRING -->
+<section id="bring">
+  <div class="section-wrap">
+    <p class="section-label reveal">What to Bring</p>
+    <div class="bring-grid">
+      <div class="bring-card reveal reveal-d1">
+        <div class="bring-icon">🩱</div>
+        <h4 class="bring-title">Swimwear</h4>
+        <p class="bring-desc">A comfortable swimsuit or rash guard. Wetsuits are provided but you're welcome to bring your own.</p>
+      </div>
+      <div class="bring-card reveal reveal-d2">
+        <div class="bring-icon">🌊</div>
+        <h4 class="bring-title">Equipment</h4>
+        <p class="bring-desc">Equipment is available for rent if needed, please contact ahead of time. We are happy to provide recommendations and gear education before your class if you choose to buy your own gear.</p>
+      </div>
+      <div class="bring-card reveal reveal-d3">
+        <div class="bring-icon">🥗</div>
+        <h4 class="bring-title">Food & Water</h4>
+        <p class="bring-desc">Stay hydrated. Bring snacks and lunch for Day 2. Avoid heavy meals within 2 hours of diving.</p>
+      </div>
+      <div class="bring-card reveal reveal-d1">
+        <div class="bring-icon">☀️</div>
+        <h4 class="bring-title">Sun Protection</h4>
+        <p class="bring-desc">Reef-safe sunscreen, a hat, and UV-protective layers for topside time between dives.</p>
+      </div>
+      <div class="bring-card reveal reveal-d2">
+        <div class="bring-icon">📝</div>
+        <h4 class="bring-title">Signed Waiver</h4>
+        <p class="bring-desc">A medical waiver will be sent ahead of the course. Complete it before Day 1 — no paperwork on site.</p>
+      </div>
+      <div class="bring-card reveal reveal-d3">
+        <div class="bring-icon">🧘</div>
+        <h4 class="bring-title">An Open Mind</h4>
+        <p class="bring-desc">Freediving is as much mental as physical. Come rested, relaxed, and ready to slow down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-wrap">
+    <p class="section-label reveal">FAQ</p>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Do I need to know how to swim? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">Yes — you should be a comfortable, confident swimmer in open water. You don't need to be a competitive swimmer, but you should be able to swim 200m without stopping and feel at ease in the ocean.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is freediving dangerous? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">Like any water sport, freediving carries risk — but the risks are well understood and manageable. Shallow water blackout is the primary danger, and it is entirely preventable with proper buddy technique and training. The Level 1 course teaches you exactly how to manage this.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I can't equalize? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">Equalization is a learnable skill and we spend significant time on it during Day 1. Most students learn the Frenzel technique within the course. If you have chronic ear or sinus issues, consult a doctor before enrolling.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How deep will I dive? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">Depth is never the focus — comfort and technique are. Most students reach 10–15m on their first open water day. Some go deeper, some less — both are completely fine. There's no minimum depth requirement to certify.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What do I get at the end? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">A Level 1 Freediving certification, a logged dive record, and a solid foundation to continue training independently or advance to Level 2.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I cancel or reschedule? <span class="faq-arrow">↓</span></button>
+        <p class="faq-a">Life happens — reach out at least 48 hours before your course and we'll find a new date. Weather cancellations are always rescheduled at no cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BOOK CTA -->
+<section id="book-cta">
+  <div class="section-wrap">
+    <div class="book-cta-inner reveal">
+      <p class="section-label" style="justify-content:center;">Book</p>
+      <h2 class="book-cta-title">Ready to<br><em>go deeper?</em></h2>
+      <p class="book-cta-sub">Summer weekends are filling up. Reserve your spot below — $500 per person.</p>
+      <a href="booking.html" class="btn-primary">Book Level 1 — $500</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">MM Freediving</span>
+  <p>© 2025 MM Freediving · South Florida</p>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/mattmfreediving/" target="_blank">Instagram</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">SMS Terms</a>
+  </div>
+</footer>
+
+<script>
+  // NAV
+  // ── KEEP NAV CLEAR OF THE ANNOUNCEMENT BANNER (handles banner wrapping on mobile) ──
+  (function () {
+    const banner = document.getElementById('announceBanner');
+    function syncBannerHeight() {
+      const h = (banner && document.body.classList.contains('banner-visible')) ? banner.offsetHeight : 0;
+      document.documentElement.style.setProperty('--banner-h', h + 'px');
+    }
+    syncBannerHeight();
+    window.addEventListener('load', syncBannerHeight);
+    window.addEventListener('resize', syncBannerHeight, { passive: true });
+    window.addEventListener('orientationchange', syncBannerHeight);
+  })();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // SCROLL REVEAL
+  document.body.classList.add('js-loaded');
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    rect.top < window.innerHeight ? el.classList.add('visible') : observer.observe(el);
+  });
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

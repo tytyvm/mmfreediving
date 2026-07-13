@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── PRIMARY SEO ── -->
+  <title>Private Freediving Lessons | MM Freediving | South Florida</title>
+  <meta name="description" content="Private one-on-one freediving instruction in South Florida. Custom sessions for beginners, scuba divers, and spearfishers. Flexible scheduling, any location. Serving Boca Raton, Jupiter, Palm Beach, Fort Lauderdale." />
+  <meta name="keywords" content="private freediving lessons South Florida, one on one freediving instructor Boca Raton, freediving Jupiter FL, freediving coach Florida, private freediving instruction Palm Beach, spearfishing freediving training Florida" />
+  <meta name="author" content="MM Freediving" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mmfreediving.com/private.html" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Private Freediving Lessons | MM Freediving South Florida" />
+  <meta property="og:description" content="One-on-one freediving instruction in South Florida. Tailored to your goals. Any level, any location." />
+  <meta property="og:url" content="https://mmfreediving.com/private.html" />
+  <meta property="og:site_name" content="MM Freediving" />
+  <meta property="og:image" content="https://mmfreediving.com/images/og-image.jpg" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Private Freediving Lessons | MM Freediving South Florida" />
+  <meta name="twitter:description" content="One-on-one freediving instruction in South Florida. Tailored to your goals. Any level, any location." />
+
+  <!-- ── SERVICE SCHEMA ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Private Freediving Sessions",
+    "description": "One-on-one freediving instruction tailored to your specific goals. Half or full day sessions available for all levels — beginners, scuba divers, spearfishers, and advanced freedivers. South Florida locations.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "MM Freediving",
+      "url": "https://mmfreediving.com",
+      "telephone": "+1-000-000-0000",
+      "email": "hello@mmfreediving.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boca Raton",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Boca Raton" },
+      { "@type": "City", "name": "Delray Beach" },
+      { "@type": "City", "name": "West Palm Beach" },
+      { "@type": "City", "name": "Fort Lauderdale" },
+      { "@type": "State", "name": "Florida" }
+    ],
+    "serviceType": "Freediving Instruction",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "All levels — beginners, scuba divers, spearfishers, advanced freedivers"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Pricing on request. Contact for half day and full day rates.",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2; --sand: #f2ebe0; --shell: #e8ddd0; --shore: #c9bfb0;
+      --ocean: #3a8fa8; --ocean-deep: #276e85; --seafoam: #6bb5c8;
+      --sunset: #e87c3e; --sunset-lt: #f0a060; --sunset-dk: #c45e28;
+      --ink: #1c2b32; --driftwood: #6e6258; --muted: #9e9488;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 1.8rem 4rem; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(250,247,242,0.97) 60%, transparent); pointer-events: none; transition: background 0.3s; }
+    nav.scrolled::before { background: rgba(250,247,242,0.98); box-shadow: 0 1px 0 var(--shell); }
+    .nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 300; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: relative; z-index: 301; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: all 0.35s ease; transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 199; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: var(--serif); font-size: 2.8rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color 0.3s; }
+    .mobile-menu a:hover { color: var(--sunset); }
+    .mobile-menu-sub { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-top: 1rem; }
+
+    /* PAGE HERO */
+    .page-hero { position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 4rem 5rem; overflow: hidden; }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 80% 45%, rgba(232,124,62,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 45% at 10% 65%, rgba(107,181,200,0.2) 0%, transparent 60%),
+        linear-gradient(168deg, #faf7f2 0%, #f5f0e6 30%, #eedfd0 65%, #e8d5c0 100%);
+    }
+    .page-hero-glow { position: absolute; bottom: 0; left: 0; right: 0; height: 35%; background: linear-gradient(to top, rgba(232,124,62,0.09), transparent); pointer-events: none; }
+    .breadcrumb { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; position: relative; animation: fadeUp 0.8s ease 0.1s both; }
+    .breadcrumb a { color: var(--ocean); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .page-title { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; line-height: 0.92; color: var(--ink); position: relative; animation: fadeUp 0.8s ease 0.3s both; }
+    .page-title em { font-style: italic; color: var(--sunset); }
+    .page-tagline { margin-top: 1.5rem; font-size: 0.9rem; color: var(--driftwood); max-width: 440px; line-height: 1.9; position: relative; animation: fadeUp 0.8s ease 0.5s both; }
+    .page-hero-meta { margin-top: 2rem; display: flex; gap: 2.5rem; flex-wrap: wrap; position: relative; animation: fadeUp 0.8s ease 0.7s both; }
+    .page-hero-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+    .page-hero-stat-val { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--sunset-dk); }
+    .page-hero-stat-label { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-loaded .reveal { opacity: 0; transform: translateY(32px); }
+    .js-loaded .reveal.reveal-left { transform: translateX(-32px); }
+    .js-loaded .reveal.reveal-right { transform: translateX(32px); }
+    .reveal.visible { opacity: 1 !important; transform: translate(0,0) !important; }
+    .reveal-d1 { transition-delay: 0.1s; } .reveal-d2 { transition-delay: 0.2s; } .reveal-d3 { transition-delay: 0.3s; }
+
+    /* BUTTONS */
+    .btn-primary { display: inline-block; padding: 0.95rem 2.4rem; border: 1.5px solid var(--sunset); color: var(--sunset-dk); background: transparent; text-decoration: none; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; transition: all 0.4s; position: relative; overflow: hidden; }
+    .btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--sunset); transform: translateX(-101%); transition: transform 0.4s ease; z-index: -1; }
+    .btn-primary:hover { color: #fff; }
+    .btn-primary:hover::before { transform: translateX(0); }
+    .btn-ghost { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--driftwood); text-decoration: none; transition: color 0.3s; }
+    .btn-ghost:hover { color: var(--ink); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--shell), transparent); margin: 0 4rem; }
+
+    /* SECTION */
+    .section-wrap { max-width: 1360px; margin: 0 auto; padding: 6rem 4rem; }
+    .section-label { font-size: 0.58rem; letter-spacing: 0.48em; text-transform: uppercase; color: var(--sunset); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .section-label::after { content: ''; display: block; width: 36px; height: 1px; background: var(--sunset); opacity: 0.5; }
+
+    /* OVERVIEW */
+    #overview { background: var(--cream); }
+    .overview-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
+    .overview-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.3; color: var(--ink); margin-bottom: 2rem; }
+    .overview-heading em { font-style: italic; color: var(--sunset); }
+    .overview-text { font-size: 0.86rem; line-height: 2; color: var(--driftwood); margin-bottom: 1.2rem; }
+    .overview-sidebar { display: flex; flex-direction: column; gap: 0; }
+    .sidebar-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--shell); font-size: 0.72rem; }
+    .sidebar-row:first-child { padding-top: 0; }
+    .sidebar-label { letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .sidebar-val { color: var(--ink); font-weight: 400; text-align: right; }
+    .sidebar-price { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--sunset-dk); margin-top: 1.5rem; line-height: 1.4; }
+
+    /* WHO IT'S FOR */
+    #who { background: var(--sand); }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 1rem; }
+    .who-card { background: var(--cream); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background 0.3s; }
+    .who-card:hover { background: #fff; }
+    .who-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--sunset-lt), var(--ocean)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .who-card:hover::after { transform: scaleX(1); }
+    .who-label { font-size: 0.56rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ocean); margin-bottom: 0.8rem; }
+    .who-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--ink); margin-bottom: 0.8rem; line-height: 1.2; }
+    .who-desc { font-size: 0.82rem; color: var(--driftwood); line-height: 1.8; }
+
+    /* WHAT WE COVER */
+    #cover { background: var(--cream); }
+    .cover-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6rem; align-items: start; }
+    .cover-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .cover-list li { font-size: 0.86rem; color: var(--driftwood); padding: 1rem 0 1rem 1.2rem; border-bottom: 1px solid var(--shell); position: relative; line-height: 1.6; }
+    .cover-list li:last-child { border-bottom: none; }
+    .cover-list li::before { content: '—'; position: absolute; left: 0; color: var(--sunset-lt); }
+    .cover-heading { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; line-height: 1.3; color: var(--ink); margin-bottom: 1.5rem; }
+    .cover-heading em { font-style: italic; color: var(--sunset); }
+    .cover-text { font-size: 0.86rem; line-height: 2; color: var(--driftwood); margin-bottom: 1rem; }
+
+    /* CONTACT CTA */
+    #contact-cta { background: linear-gradient(155deg, var(--sand) 0%, #ede5d8 100%); }
+    .contact-cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .contact-cta-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.1; margin-bottom: 1rem; }
+    .contact-cta-title em { font-style: italic; color: var(--sunset); }
+    .contact-cta-sub { font-size: 0.86rem; color: var(--driftwood); line-height: 1.9; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-top: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label { font-size: 0.56rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+    .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.6); border: 1px solid var(--shell); color: var(--ink); font-family: var(--sans); font-size: 0.84rem; font-weight: 300; padding: 0.88rem 1.1rem; outline: none; transition: border-color 0.3s; appearance: none; width: 100%; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sunset-lt); }
+    .form-group textarea { resize: none; height: 100px; }
+    .form-group select option { background: var(--sand); }
+    .form-submit { margin-top: 0.5rem; padding: 0.95rem 2.4rem; border: 1.5px solid var(--sunset); background: transparent; color: var(--sunset-dk); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; cursor: pointer; transition: all 0.4s; align-self: flex-start; position: relative; overflow: hidden; }
+    .form-submit::before { content: ''; position: absolute; inset: 0; background: var(--sunset); transform: translateX(-101%); transition: transform 0.4s ease; z-index: -1; }
+    .form-submit:hover { color: #fff; }
+    .form-submit:hover::before { transform: translateX(0); }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    footer p { font-size: 0.62rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.2); }
+    .footer-social { display: flex; gap: 1.5rem; }
+    .footer-social a { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-social a:hover { color: var(--sunset-lt); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.4rem 1.8rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      .page-hero { padding: 0 1.8rem 4rem; min-height: 50vh; }
+      .section-wrap { padding: 4rem 1.8rem; }
+      .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .who-grid { grid-template-columns: 1fr; }
+      .cover-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  /* ── ANNOUNCEMENT BANNER ── */
+  .announce-banner { position:fixed; top:0; left:0; right:0; z-index:300; background:#e87c3e; color:#fff; text-align:center; padding:0.65rem 3rem; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:1rem; }
+  .announce-banner a { color:#fff; text-decoration:underline; text-underline-offset:3px; font-weight:400; white-space:nowrap; }
+  .announce-banner a:hover { opacity:0.85; }
+  .announce-close { position:absolute; right:1rem; background:none; border:none; color:#fff; font-size:1.1rem; cursor:pointer; opacity:0.7; line-height:1; padding:0.2rem 0.4rem; }
+  .announce-close:hover { opacity:1; }
+  body.banner-visible nav { top:var(--banner-h, 38px); }
+  body.banner-visible .mobile-menu { padding-top:var(--banner-h, 38px); }
+  </style>
+</head>
+<body class="banner-visible">
+
+<!-- ── ANNOUNCEMENT BANNER ── -->
+<div class="announce-banner" id="announceBanner">
+  <span>Classes now available — <strong>July 11</strong> &amp; <strong>August 1</strong></span>
+  <a href="booking.html">Book Now →</a>
+  <button class="announce-close" onclick="document.getElementById('announceBanner').remove(); document.body.classList.remove('banner-visible');" aria-label="Close">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">MM Freediving</a>
+  <ul class="nav-links">
+    <li><a href="index.html#courses">Courses</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="booking.html">Book</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#courses" class="mobile-link">Courses</a>
+  <a href="index.html#about"   class="mobile-link">About</a>
+  <a href="booking.html"    class="mobile-link">Book</a>
+  <a href="index.html#contact" class="mobile-link">Contact</a>
+  <p class="mobile-menu-sub">South Florida · Freediving Instruction</p>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+  <p class="breadcrumb"><a href="index.html">MM Freediving</a> &nbsp;/&nbsp; Courses &nbsp;/&nbsp; Private Sessions</p>
+  <h1 class="page-title">Private<br><em>Sessions</em></h1>
+  <p class="page-tagline">One instructor. One student. Entirely built around you — your goals, your pace, your ocean.</p>
+  <div class="page-hero-meta">
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">1-on-1</span>
+      <span class="page-hero-stat-label">Instruction</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">Any Level</span>
+      <span class="page-hero-stat-label">Welcome</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">Custom</span>
+      <span class="page-hero-stat-label">Location</span>
+    </div>
+    <div class="page-hero-stat">
+      <span class="page-hero-stat-val">Flexible</span>
+      <span class="page-hero-stat-label">Schedule</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="section-wrap">
+    <div class="overview-grid">
+      <div class="reveal">
+        <p class="section-label">Overview</p>
+        <h2 class="overview-heading">Your goals.<br><em>Your timeline.</em></h2>
+        <p class="overview-text">Private sessions are the fastest way to improve as a freediver. Without a group dynamic, every minute of water time is focused entirely on you — your technique, your mental game, your specific goals for the day.</p>
+        <p class="overview-text">Whether you're a complete beginner who prefers to learn without an audience, a scuba diver wanting a gentle introduction to breath-hold, a spearfisher working on safety and depth, or an experienced freediver looking to break through a plateau — private sessions are built to meet you exactly where you are.</p>
+        <p class="overview-text">Sessions run as half days or full days, at a location that works for you. Pricing is discussed directly — reach out and we'll put together something that fits.</p>
+        <div style="margin-top:2rem; display:flex; gap:1.2rem; flex-wrap:wrap;">
+          <a href="#contact-cta" class="btn-primary">Get in Touch</a>
+          <a href="level-1.html" class="btn-ghost" style="display:flex;align-items:center;">View Level 1 Course →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-right reveal-d1">
+        <div class="overview-sidebar">
+          <div class="sidebar-row"><span class="sidebar-label">Format</span><span class="sidebar-val">1-on-1</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Duration</span><span class="sidebar-val">Half or Full Day</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Location</span><span class="sidebar-val">Your Choice</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Prerequisites</span><span class="sidebar-val">None</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Equipment</span><span class="sidebar-val">Provided</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Scheduling</span><span class="sidebar-val">Flexible</span></div>
+          <div class="sidebar-row"><span class="sidebar-label">Certification</span><span class="sidebar-val">Available on Request</span></div>
+        </div>
+        <div class="sidebar-price">Pricing on<br>request</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="section-wrap">
+    <p class="section-label reveal">Who It's For</p>
+    <div class="who-grid">
+      <div class="who-card reveal reveal-d1">
+        <p class="who-label">Beginner</p>
+        <h3 class="who-title">First-time freedivers</h3>
+        <p class="who-desc">Prefer to learn privately without a group? Private sessions are a calm, unhurried introduction to the ocean on your own terms. No pressure, no audience — just you, the water, and undivided instruction.</p>
+      </div>
+      <div class="who-card reveal reveal-d2">
+        <p class="who-label">Intermediate</p>
+        <h3 class="who-title">Scuba & spearfishing crossover</h3>
+        <p class="who-desc">Already comfortable in the water but want to translate that into real breath-hold technique? We bridge the gap between scuba instincts and freediving principles — equalization, relaxation, and efficiency at depth.</p>
+      </div>
+      <div class="who-card reveal reveal-d3">
+        <p class="who-label">Advanced</p>
+        <h3 class="who-title">Breaking through a plateau</h3>
+        <p class="who-desc">Stuck at a certain depth or time? Private sessions go deep on the specific mechanics holding you back — whether that's mental, technical, or physical. Targeted feedback, video analysis, and focused drills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT WE COVER -->
+<section id="cover">
+  <div class="section-wrap">
+    <div class="cover-grid">
+      <div class="reveal">
+        <p class="section-label">What We Cover</p>
+        <h2 class="cover-heading">Built around<br><em>your session.</em></h2>
+        <p class="cover-text">Every private session starts with a conversation — what you're working on, what's not clicking, where you want to be. From there the session is built around your specific needs. No fixed curriculum, no group pace.</p>
+        <p class="cover-text">Common focus areas are listed on the right, but this is a starting point, not a limit. If you have something specific in mind, bring it.</p>
+      </div>
+      <div class="reveal reveal-right reveal-d1">
+        <ul class="cover-list">
+          <li>Breath-hold technique and breathwork</li>
+          <li>Equalization — Frenzel, mouthfill, troubleshooting</li>
+          <li>Relaxation and mental preparation</li>
+          <li>Duck diving and efficient descent</li>
+          <li>Finning technique and hydrodynamics</li>
+          <li>Buddy system and safety protocols</li>
+          <li>Spearfishing-specific depth and safety training</li>
+          <li>Shallow water blackout prevention</li>
+          <li>Depth progression strategies</li>
+          <li>Video analysis and feedback</li>
+          <li>Competition preparation</li>
+          <li>Certification if desired</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT CTA -->
+<section id="contact-cta">
+  <div class="section-wrap">
+    <div class="contact-cta-inner reveal">
+      <p class="section-label" style="justify-content:center;">Get in Touch</p>
+      <h2 class="contact-cta-title">Let's build<br><em>your session.</em></h2>
+      <p class="contact-cta-sub">Tell us what you're working on, your availability, and where you're based — and we'll put together a session that fits. Pricing is discussed directly based on duration and focus.</p>
+      <form class="contact-form" name="private-inquiry" method="POST" action="/thank-you" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="private-inquiry" />
+        <input type="hidden" name="bot-field" style="display:none" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first-name" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last-name" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Your Experience Level</label>
+          <select name="experience">
+            <option value="">Select your background</option>
+            <option>Complete beginner</option>
+            <option>Comfortable swimmer</option>
+            <option>Scuba diver</option>
+            <option>Active spearfisher</option>
+            <option>Some freediving experience</option>
+            <option>Certified freediver</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>What Are You Working On?</label>
+          <textarea name="message" placeholder="Tell us your goals, what's not clicking, or what you'd like to focus on..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">MM Freediving</span>
+  <p>© 2025 MM Freediving · South Florida</p>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/mattmfreediving/" target="_blank">Instagram</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">SMS Terms</a>
+  </div>
+</footer>
+
+<script>
+  // NAV
+  // ── KEEP NAV CLEAR OF THE ANNOUNCEMENT BANNER (handles banner wrapping on mobile) ──
+  (function () {
+    const banner = document.getElementById('announceBanner');
+    function syncBannerHeight() {
+      const h = (banner && document.body.classList.contains('banner-visible')) ? banner.offsetHeight : 0;
+      document.documentElement.style.setProperty('--banner-h', h + 'px');
+    }
+    syncBannerHeight();
+    window.addEventListener('load', syncBannerHeight);
+    window.addEventListener('resize', syncBannerHeight, { passive: true });
+    window.addEventListener('orientationchange', syncBannerHeight);
+  })();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // SCROLL REVEAL
+  document.body.classList.add('js-loaded');
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    rect.top < window.innerHeight ? el.classList.add('visible') : observer.observe(el);
+  });
+</script>
+</body>
+</html>
