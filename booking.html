@@ -949,7 +949,7 @@
 
 <!-- ── ANNOUNCEMENT BANNER ── -->
 <div class="announce-banner" id="announceBanner">
-  <span>Classes now available — <strong>July 11</strong> &amp; <strong>August 1</strong></span>
+  <span>Classes now available — <strong>August 1</strong></span>
   <a href="booking.html">Book Now →</a>
   <button class="announce-close" onclick="document.getElementById('announceBanner').remove(); document.body.classList.remove('banner-visible');" aria-label="Close">×</button>
 </div>
@@ -1285,7 +1285,7 @@
   };
 
   let currentStep = 1;
-  let calendarDate = new Date(2026, 6, 1); // Start on July 2026
+  let calendarDate = new Date(2026, 7, 1); // Start on August 2026
 
   // ── COURSE SELECTION ──
   function selectCourse(el) {
@@ -1328,7 +1328,6 @@
   // ── CALENDAR ──
   // Hardcoded available sessions — { year, month (0-indexed), day, label }
   const AVAILABLE_SESSIONS = [
-    { year: 2026, month: 6, day: 11, label: 'Jul 11 – Jul 12' },  // July 11 (Sat) + July 12 (Sun)
     { year: 2026, month: 7, day: 1,  label: 'Aug 1 – Aug 2'  }    // August 1 (Sat) + August 2 (Sun)
   ];
 
