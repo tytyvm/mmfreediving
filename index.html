@@ -1090,11 +1090,7 @@
           </div>
         </div>
       </div>
-      <form class="contact-form reveal reveal-right" method="POST" action="https://formsubmit.co/mmfreediving@gmail.com">
-        <input type="hidden" name="_subject" value="New message from mmfreediving.com" />
-        <input type="hidden" name="_next" value="https://mmfreediving.com/thank-you.html" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
+      <form class="contact-form reveal reveal-right" id="contactForm" novalidate>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-row">
           <div class="form-group">
@@ -1272,6 +1268,46 @@
   });
 </script>
 
+
+<!-- Contact form -> backend (AI reply / owner notification) -->
+<script>
+(function () {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var CONTACT_URL = 'https://mmfreediving-backend.onrender.com/contact';
+  var btn = form.querySelector('.form-submit');
+  var val = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!val('first-name') || !val('email')) {
+      alert('Please add your first name and email so we can reply.');
+      return;
+    }
+    var payload = {
+      firstName: val('first-name'), lastName: val('last-name'), email: val('email'),
+      interest: val('interested-in'), experience: val('experience'),
+      message: val('message'), honey: val('_honey')
+    };
+    var label = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    fetch(CONTACT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function (r) { return r.json().catch(function () { return {}; }); })
+    .then(function (d) {
+      if (d && d.ok) { window.location.href = 'thank-you.html'; }
+      else { throw new Error('server'); }
+    })
+    .catch(function () {
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+      alert("Something went wrong sending your message. Please email us directly at mmfreediving@gmail.com and we'll get right back to you.");
+    });
+  });
+})();
+</script>
 
 <!-- MM Freediving chat widget -->
 <script>
